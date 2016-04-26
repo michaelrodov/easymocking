@@ -10,17 +10,24 @@ public class MyInterfaceApi {
         myInterface2 = new MyInterfaceImpl();
     }
 
-/*
+    /***
+     * Used for partial mock
+     * @param myInterfaceImpl
+     */
     MyInterfaceApi(MyInterface myInterfaceImpl){
         myInterface1 = myInterfaceImpl;
+        myInterface2 = new MyInterfaceImpl();
+
     }
-*/
 
     public String doSomething(String s, Double d) {
         System.out.println("[1] doSomething:"
                 + "\n    myInterface1.getMeString() = " + myInterface1.getMeString()
                 + "\n    myInterface1.getMeString(s) = " + myInterface1.getMeString(s)
-                + "\n    myInterface1.getMeInt(d) = " + myInterface2.getMeInt(d));
+                + "\n    myInterface1.getMeString(s) = " + myInterface1.getMeString("DASH")
+                + "\n    myInterface1.getMeString(s) = " + myInterface1.getMeString("bash")
+                //+ "\n    MyInterfaceImpl.staticSquare(2) = " + MyInterfaceImpl.staticSquare(2)
+                + "\n    myInterface1.getMeInt(d) = " + myInterface1.getMeInt(d));
 
         System.out.println("[2] doSomething:"
                 + "\n    myInterface2.getMeString() = " + myInterface2.getMeString()
